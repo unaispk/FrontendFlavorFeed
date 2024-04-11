@@ -1,0 +1,7 @@
+.link-hover {
+    visibility: visible; /* Make sure it is not set to 'hidden' or 'collapse' */
+    text-decoration: none;
+
+    color: #000; /* Change this color to the desired hover color */
+  }
+  

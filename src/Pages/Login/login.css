@@ -1,0 +1,28 @@
+body{
+    background-color: #f9f9fc;
+  }
+  
+  .SigninMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .signinContainer{
+    width: 80vw;
+    box-shadow: 0 -2px 22px #66666685;
+    border-radius: 2px;
+  }
+
+  .form-input::placeholder {
+    color: #999;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .loginBtn {
+    border-radius: 2px;
+  }
+  
+  .loginBtn:hover {
+    background-color: #6532dc;
+  }
