@@ -2,18 +2,9 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import axios from 'axios'
-import AlertPage from './AlertPage';
-import { useNavigate } from 'react-router';
 
 
-
-const AddRecipe = () => {
-
-  const navigate = useNavigate()
-
-  const role = sessionStorage.getItem('role');
-  const id = sessionStorage.getItem('userId');
-  console.log(id);
+const AddRecipeHome = () => {
 
   const [inputs, setInput] = useState({
     recipename: '',
@@ -76,7 +67,7 @@ const AddRecipe = () => {
 
 
     if (Object.keys(formErrors).length == 0 && toSubmit === true) {
-      axios.post(`http://localhost:2001/recipe/addrecipe/${id}`, formData).then((res) => {
+      axios.post('http://localhost:2001/recipe/addrecipetohome', formData).then((res) => {
         //   toast.success(res.data.message)
         alert(res.data.message);
       }).catch((error) => {
@@ -87,12 +78,6 @@ const AddRecipe = () => {
     }
   }
 
-  // const addIngredients = (event) => {
-  //   event.preventDefault();
-  //   console.log("addIngredients");
-  //   const userInput = document.getElementById('ingredients').value;
-  //   console.log(userInput)
-  // }
 
 
   const inputChange = (event) => {
@@ -162,13 +147,9 @@ const AddRecipe = () => {
             </div>
 
             <div className="flex justify-center">
-             
-                
-                <button type="submit"
+              <button type="submit"
                 className="bg-blue-500 text-white py-2 px-6 rounded-sm hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
-                onClick={handleSubmitForm}> Add Recipe </button> :
-              
-              
+                onClick={handleSubmitForm}> Add Recipe </button>
             </div>
             
           </form>
@@ -179,4 +160,4 @@ const AddRecipe = () => {
   );
 };
 
-export default AddRecipe;
+export default AddRecipeHome;

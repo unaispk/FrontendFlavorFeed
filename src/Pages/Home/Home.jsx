@@ -96,11 +96,11 @@ const Home = () => {
                 }
 
             </div>
-            <div className="bg-base-200 p-4 flex justify-center">
+            {/* <div className="bg-base-200 p-4 flex justify-center">
               <div className='w-80 shadow-xl'>
                 <img src="src/assets/baking.jpg" alt="image" className='w-full h-full object-contain rounded-lg' />
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>

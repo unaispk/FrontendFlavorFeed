@@ -166,6 +166,7 @@ onClick={() => {
         ))}
       </div>
     </div>
+
   )}
 
 </div>
@@ -204,7 +205,9 @@ onClick={() => {
           </div>
         </div>
       ))}
+      
     </div>
+    
   )
 }
 </div >
@@ -259,7 +262,9 @@ setSubHeading("");
         </div>
       ))}
     </div>
+
   </div>
+
 )}
 
 </div>

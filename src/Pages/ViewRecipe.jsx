@@ -82,7 +82,7 @@ const ViewRecipe = () => {
                 images.map((image, key) => (
                   <img
                     key={key}
-                    src={`/images/uploads/${image}`}
+                    src={`${image}`}
                     alt="Chocolate Cake"
                     className="w-full h-64 object-cover rounded-md mb-4"
                   />

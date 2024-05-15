@@ -9,7 +9,8 @@ import MainPage from "./Pages/MainPage";
 import ViewRecipe from "./Pages/ViewRecipe";
 import AuthorProfile from "./Pages/AuthorProfile";
 import AddRecipe from "./Pages/AddRecipe";
-
+import AlertPage from "./Pages/AlertPage";
+import AddRecipeHome from "./Pages/AddRecipeHome";
 
 
 const App = () => {
@@ -26,8 +27,10 @@ const App = () => {
         <Route path='/resetpassword' element={<ForgotPassword />} />
         <Route path='/main' element={<MainPage/>}/>
         <Route path='/viewrecipe/:recipeId' element={<ViewRecipe />}/>
-        <Route path='/author' element={<AuthorProfile />}/>
+        <Route path='/user/:UserID' element={<AuthorProfile />}/>
         <Route path='/addrecipe' element={<AddRecipe />}/>
+        <Route path='/addrecipetohome' element={<AddRecipeHome />}/>
+        <Route path="/alertpage" element={<AlertPage />}/>
       </Routes>
     </BrowserRouter>
 

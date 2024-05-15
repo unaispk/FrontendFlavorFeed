@@ -56,17 +56,17 @@ export const links = [
       
     ],
   },
-  {
-    name: "Add a recipe",
-    link: "/addrecipe",
-    submenu: false, 
-  }
-  ,
-  {
-    name: "Profile",
-    link: "/author",
-    submenu: false, 
-  },
+  // {
+  //   name: "Add a recipe",
+  //   link: "/addrecipe",
+  //   submenu: false, 
+  // }
+  // ,
+  // {
+  //   name: "Profile",
+  //   link: "/user/:UserID",
+  //   submenu: false, 
+  // },
 
 
  

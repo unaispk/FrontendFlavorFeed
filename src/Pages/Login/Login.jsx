@@ -57,7 +57,7 @@ const Login = () => {
                 // const userid = localStorage.getItem('userId')
                 // const userName = sessionStorage.getItem('userName')
                 // const userName = sessionStorage.getItem('emailID')
-                navigate('/main')
+                navigate('/')
            }).catch((error) => {
                // toast.error(error.response.data.message);
                alert(error.response.data.message)

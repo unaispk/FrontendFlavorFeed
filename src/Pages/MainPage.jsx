@@ -12,7 +12,7 @@ function MainPage() {
       <Navbar />
       <div className=''>
         <div className="flex flex-col  justify-center items-center h-3/4 p-4 md:p-8">
-          <div className="text-4xl md:text-5xl font-bold text-center text-[#000] mb-6 md:mb-12   font-[Poppins]  ">
+          <div className="text-4xl md:text-5xl font-bold text-center text-[#000]  md:mb-4   font-[Poppins]  ">
             <h1> All <span className='text-yellow-400  text-4xl md:text-5xl font-bold text-center font-[Poppins]'>Recipes</span></h1>
           </div>
         </div>
