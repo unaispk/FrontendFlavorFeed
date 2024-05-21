@@ -3,10 +3,10 @@ import Button from "../../components/Button";
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import './home.css'
-import CardsDishHome from '../../components/CardsDishHome/CardsDishHome';
 import ExploreAll from '../../components/ExploreAll/ExploreAll';
 import { Link } from 'react-router-dom';
-// import Nav from '../../components/Nav';
+import HomeFeaturedRecipe from '../../components/CardsDishHome/HomeFeaturedRecipe';
+import HomePopularRecipeCard from '../../components/CardsDishHome/HomePopularRecipeCard';
 
 const Home = () => {
 
@@ -42,10 +42,8 @@ const Home = () => {
 
         <div className="flex justify-around mx-4 mb-8 mt-4 ">
           <div className="flex flex-wrap ">
-          <CardsDishHome image="/images/uploads/dish3.jpg" title="Dish 1" />
-          <CardsDishHome image="/images/uploads/dish1.jpg" title="Dish 1" />
-          <CardsDishHome image="/images/uploads/5057.jpg" title="Biriyani" />
-          <CardsDishHome image="/images/uploads/dish2.jpg" title="Dish 1" />
+          <HomeFeaturedRecipe/>
+        
           </div>
 
         </div>
@@ -61,10 +59,7 @@ const Home = () => {
 
         <div className="flex justify-around mx-4 mb-8 mt-4 ">
           <div className="flex flex-wrap   ">
-          <CardsDishHome image="/images/uploads/dish3.jpg" title="Dish 1" />
-          <CardsDishHome image="/images/uploads/dish1.jpg" title="Dish 1" />
-          <CardsDishHome image="/images/uploads/5057.jpg" title="Biriyani" />
-          <CardsDishHome image="/images/uploads/dish2.jpg" title="Dish 1" />
+          <HomePopularRecipeCard />
           </div>
         </div>
         <div className="text-center mb-4">

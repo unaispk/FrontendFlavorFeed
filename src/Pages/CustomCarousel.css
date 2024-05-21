@@ -1,0 +1,19 @@
+/* this is for Customize flowbite Carousel buttons */
+
+/* CustomCarousel.css */
+
+/* Target the carousel control buttons */
+.custom-carousel .group {
+    background-color: transparent !important;
+}
+
+/* Ensure hover and focus states are also transparent */
+.custom-carousel .group:hover,
+.custom-carousel .group:focus {
+    background-color: transparent !important;
+}
+
+/* Override specific inner elements' background if needed */
+.custom-carousel .group .inline-flex {
+    background-color: transparent !important;
+}

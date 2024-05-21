@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import axios from 'axios'
+import { useNavigate } from 'react-router';
 
+const EditRecipe = () => {
 
-const AddRecipeHome = () => {
+  const navigate = useNavigate()
+
+  const role = sessionStorage.getItem('role');
+  const id = sessionStorage.getItem('userId');
+  console.log(id);
 
   const [inputs, setInput] = useState({
     recipename: '',
@@ -67,7 +73,7 @@ const AddRecipeHome = () => {
 
 
     if (Object.keys(formErrors).length == 0 && toSubmit === true) {
-      axios.post('http://localhost:2001/recipe/addrecipetohome', formData).then((res) => {
+      axios.post(`http://localhost:2001/recipe/addrecipe/${id}`, formData).then((res) => {
         //   toast.success(res.data.message)
         alert(res.data.message);
       }).catch((error) => {
@@ -77,8 +83,6 @@ const AddRecipeHome = () => {
       console.log("Successfully submitted");
     }
   }
-
-
 
   const inputChange = (event) => {
     const name = event.target.name;
@@ -100,7 +104,7 @@ const AddRecipeHome = () => {
       <Navbar />
       <div className="bg-gray-100 p-2 flex items-center justify-center">
         <div className="bg-white p-4 rounded-sm shadow-md w-full md:w-3/4 lg:w-1/2">
-          <h1 className="text-3xl font-bold mb-6">Add a New Recipe</h1>
+          <h1 className="text-3xl font-bold mb-6">Edit a recipe</h1>
           <form className="space-y-4" encType='multipart/form-data'>
             <div>
               <label htmlFor="recipeName" className="block text-sm font-semibold mb-2">Recipe Name
@@ -147,9 +151,13 @@ const AddRecipeHome = () => {
             </div>
 
             <div className="flex justify-center">
-              <button type="submit"
+             
+                
+                <button type="submit"
                 className="bg-blue-500 text-white py-2 px-6 rounded-sm hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
-                onClick={handleSubmitForm}> Add Recipe </button>
+                onClick={handleSubmitForm}> Add Recipe </button> 
+              
+              
             </div>
             
           </form>
@@ -160,4 +168,4 @@ const AddRecipeHome = () => {
   );
 };
 
-export default AddRecipeHome;
+export default EditRecipe;

@@ -6,20 +6,16 @@ import axios from 'axios'
 function MainRecipeCard() {
 
     const [recipes, setRecipes] = useState([]);
-
     const [isBtnClicked, setIsBtnClicked] = useState(false);
 
     const navigate = useNavigate();
     console.log(recipes);   
 
-
     useEffect(() => {
         axios.get('http://localhost:2001/recipe').then((res) => {
             setRecipes(res.data.data)
         })
-    }, []) // depentancy array
-
-
+    }, []) 
 
     const role = sessionStorage.getItem('role');
 
@@ -27,13 +23,15 @@ function MainRecipeCard() {
         console.log(id);
         axios.post(`http://localhost:2001/recipe/approve/${id}`).then((res) => {
             console.log(res);
+            alert('Recipe is added')
         })
     }
 
     const rejectRecipe = (id) => {
         console.log(id);
         axios.post(`http://localhost:2001/recipe/reject/${id}`).then((res) => {
-            console.log(res);
+            console.log(res)
+            alert('Recipe is rejected')
         })
     }
 
@@ -55,15 +53,23 @@ function MainRecipeCard() {
                                     </div>
 
                                     <div className="card-actions justify-center">
-                                        {recipe.status === "pending" ? <>
-
-
+                                        {/* {recipe.status === "pending" ? 
+                                            <>
                                             <button onClick={() => { approveRecipe(recipe._id); setIsBtnClicked(true); }} className="bg-[#22c55e] hover:bg-[#16a34a] text-white px-6 py-2 rounded-full">accept</button>
 
                                             <button onClick={() => { rejectRecipe(recipe._id) }} className="bg-[#ef4444] hover:bg-[#dc2626] text-white px-6 py-2 rounded-full">reject</button></>
                                             :
+                                            <>
+                                            <button onClick={() => { approveRecipe(recipe._id); setIsBtnClicked(true); }} className="bg-[#22c55e] hover:bg-[#16a34a] text-white px-6 py-2 rounded-full">accept</button>
+
                                             <button onClick={() => { rejectRecipe(recipe._id) }} className="bg-[#ef4444] hover:bg-[#dc2626] text-white px-6 py-2 rounded-full">reject</button>
-                                        }
+                                            </>
+                                        } */}
+                                          <>
+                                          <button onClick={() => { approveRecipe(recipe._id); setIsBtnClicked(true); }} className="bg-[#22c55e] hover:bg-[#16a34a] text-white px-6 py-2 rounded-full">accept</button>
+
+                                           <button onClick={() => { rejectRecipe(recipe._id) }} className="bg-[#ef4444] hover:bg-[#dc2626] text-white px-6 py-2 rounded-full">reject</button>
+                                           </>
 
 
                                     </div>

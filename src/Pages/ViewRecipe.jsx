@@ -45,8 +45,9 @@ const ViewRecipe = () => {
   const instructions = recipeDetails && recipeDetails.instructions;
 
   console.log(instructions);
-  
 
+  
+   
   return (
     <>
       <Navbar />
@@ -63,38 +64,32 @@ const ViewRecipe = () => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title="Shrimp and Chorizo Paella"
+            title="User name"
             subheader="September 14, 2016"
           />
           <h1 className="text-4xl font-bold mb-4">{recipeName}</h1>
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-{/* 
-      <Carousel>
-        <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
-      </Carousel> */}
 
-            <Carousel>
+
+            <Carousel className="custom-carousel">
               {images ? (
                 images.map((image, key) => (
                   <img
                     key={key}
                     src={`${image}`}
                     alt="Chocolate Cake"
-                    className="w-full h-64 object-cover rounded-md mb-4"
+                    className="w-full h-64 object-cover  rounded-md mb-4"
                   />
                 ))
               ) : (
                 <img
-                  src="https://flowbite.com/docs/images/carousel/carousel-placeholder.svg"
+                  src="https://flowbite.com/docs/images/carousel/carousel-placeholder.svg" 
                   alt="Placeholder"
                   className="w-full h-64 object-cover rounded-md mb-4"
                 />
               )}
-            </Carousel>
+
+            </Carousel >
 
     </div>
 

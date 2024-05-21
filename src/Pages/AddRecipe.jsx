@@ -166,7 +166,7 @@ const AddRecipe = () => {
                 
                 <button type="submit"
                 className="bg-blue-500 text-white py-2 px-6 rounded-sm hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
-                onClick={handleSubmitForm}> Add Recipe </button> :
+                onClick={handleSubmitForm}> Add Recipe </button> 
               
               
             </div>

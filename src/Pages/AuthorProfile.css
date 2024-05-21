@@ -1,0 +1,12 @@
+.deleteButton {
+    background-color: transparent; /* Set the background color to transparent */
+    border: none; /* Remove the border */
+    color: gray; /* Set the text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .deleteButton:hover {
+    color: red; /* Change text color on hover */
+  }
+  
