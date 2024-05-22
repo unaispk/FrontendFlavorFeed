@@ -69,7 +69,6 @@ function ForgotPassword() {
         <>
             <div>
                 <section className="h-screen bg-Homewall bg-cove font-[Poppins] md:bg-top bg-center">
-                    <Navbar />
                     <div className="flex flex-col justify-center text-center  items-center h-3/4">
                         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 

@@ -42,7 +42,6 @@ const AuthorProfile = () => {
         <>
 
 
-            <Navbar />
 
             <div className="flex flex-col  justify-center items-center h-3/4 p-4 md:p-8">
                 <div className="text-4xl md:text-5xl font-bold text-center text-[#000]  md:mb-4   font-[Poppins]  ">

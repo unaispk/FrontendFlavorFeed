@@ -11,7 +11,6 @@ const AlertPage = () => {
 
   return (
     <>
-      <Navbar />
       <div className='flex mt-20 h-full  items-center justify-center' >
         <div role="alert"
           className=" mx-auto max-w-lg rounded-lg border border-stone bg-stone-100 p-4 shadow-lg sm:p-8 lg:p-10"

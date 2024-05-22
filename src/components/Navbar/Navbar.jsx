@@ -78,7 +78,7 @@ const Navbar = () => {
                 
                 
                 <li><Link to="/addrecipe" className="py-7 px-3 inline-block hover:text-primary">ADD A RECIPE</Link></li>
-                <li><Link to="/user/:UserID" className="py-7 px-3 inline-block hover:text-primary">Profile</Link></li>
+                <li><Link to="/user" className="py-7 px-3 inline-block hover:text-primary">Profile</Link></li>
 
                 </>
                 :

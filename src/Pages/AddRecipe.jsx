@@ -112,7 +112,6 @@ const AddRecipe = () => {
 
   return (
     <>
-      <Navbar />
       <div className="bg-gray-100 p-2 flex items-center justify-center">
         <div className="bg-white p-4 rounded-sm shadow-md w-full md:w-3/4 lg:w-1/2">
           <h1 className="text-3xl font-bold mb-6">Add a New Recipe</h1>

@@ -12,6 +12,9 @@ import AddRecipe from "./Pages/AddRecipe";
 import AlertPage from "./Pages/AlertPage";
 import EditRecipe from "./Pages/EditRecipe";
 import HomeRecipesView from "./Pages/HomeRecipesView";
+import toast, { Toaster } from 'react-hot-toast';
+import Navbar from "./components/Navbar/Navbar";
+
 
 
 const App = () => {
@@ -19,22 +22,27 @@ const App = () => {
     // <Home/>
 
     // <Signup />
+    <>
+      <Toaster />
+        <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/resetpassword' element={<ForgotPassword />} />
+          <Route path='/main' element={<MainPage />} />
+          <Route path='/viewrecipe/:recipeId' element={<ViewRecipe />} />
+          <Route path='/viewrecipe/:category/:id' element={<HomeRecipesView />} />
+          <Route path='/user' element={<AuthorProfile />} />
+          <Route path='/addrecipe' element={<AddRecipe />} />
+          <Route path='/editrecipe/:recipeId' element={<EditRecipe />} />
+          <Route path="/alertpage" element={<AlertPage />} />
+        </Routes>
+      </BrowserRouter>
 
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/resetpassword' element={<ForgotPassword />} />
-        <Route path='/main' element={<MainPage/>}/>
-        <Route path='/viewrecipe/:recipeId' element={<ViewRecipe />}/>
-        <Route path='/viewrecipe/:category/:id' element={<HomeRecipesView />}/>
-        <Route path='/user/:UserID' element={<AuthorProfile />}/>
-        <Route path='/addrecipe' element={<AddRecipe />}/>
-        <Route path='/editrecipe' element={<EditRecipe />}/>
-        <Route path="/alertpage" element={<AlertPage />}/>
-      </Routes>
-    </BrowserRouter>
+    </>
+
 
   );
 };

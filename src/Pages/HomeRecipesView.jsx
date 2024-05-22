@@ -41,7 +41,6 @@ const HomeRecipesView = () => {
     return (
         <>
             <>
-                <Navbar />
                 <div className=" flex justify-center mt-4 mb-6">
                     <div className="bg-white p-8 rounded-md shadow-md w-full md:w-3/4 lg:w-1/2">
 

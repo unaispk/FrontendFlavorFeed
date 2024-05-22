@@ -1,22 +1,29 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './login.css'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
 
-    const navigate = useNavigate();
+//     const [inputs, setInputs] = useState({});
+//   const [formErrors, setFormErrors] = useState({});
+//   const [isSubmit, setIsSubmit] = useState(false);
+//   const navigate = useNavigate();
+
+    // const navigate = useNavigate();
 
 
     const [inputs, setInput] = useState({
         email: '',
         password: ''
     })
-
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
+    const navigate = useNavigate();
+
 
     const handleValidate = (values) => {
         var errors = {};
@@ -33,19 +40,22 @@ const Login = () => {
         return errors;
       };
 
-    const handleSubmitForm = (event) => {
+    const handleSubmitForm = async (event) => {
         event.preventDefault();
         console.log(inputs);
         setFormErrors(handleValidate(inputs))
         setIsSubmit(true)
-
-        //console.log('key', Object.keys(formErrors).length);
-
-        if (Object.keys(formErrors).length == 0 && isSubmit == true) {
+        console.log('key', Object.keys(formErrors).length ,isSubmit );       
+    }
+    
+    useEffect(()=> {
+ if (Object.keys(formErrors).length == 0 && isSubmit == true) {
             axios.post('http://localhost:2001/user/login', inputs).then((res) => {
-                //console.log("response", res);
-                //toast.success(res.data.message)
-                alert(res.data.message)
+                console.log("response", res);
+                // toast.success(res.data.message)
+                
+                // alert(res.data.message)
+                toast.success(res.data.message)
                 // localStorage.setItem('userId',res.data.data._id)
                 console.log(res.data.data._id);
                 console.log(res.data.data.email);
@@ -57,13 +67,16 @@ const Login = () => {
                 // const userid = localStorage.getItem('userId')
                 // const userName = sessionStorage.getItem('userName')
                 // const userName = sessionStorage.getItem('emailID')
-                navigate('/')
+                setTimeout(()=>{
+                    navigate('/')
+                },3000)
+                
            }).catch((error) => {
                // toast.error(error.response.data.message);
                alert(error.response.data.message)
            })
         }
-    }
+    },[isSubmit])
 
     const inputChange = (event) => {
         const name = event.target.name
@@ -75,7 +88,8 @@ const Login = () => {
         <>
             <div>
                 <section className="h-screen bg-Homewall bg-cover font-[Poppins] md:bg-top bg-center">
-                    <Navbar />
+                    <Toaster />
+
                     <div className="flex flex-col justify-center text-center items-center h-3/4">
                         <div className="SigninMain">
 
@@ -95,7 +109,7 @@ const Login = () => {
                                     <div>
                                         <Link to={'/resetpassword'}><span className="text-sm text-[#7747ff]" >Forgot your password? </span></Link>    
                                     </div>
-                                    <button type="submit" onClick={handleSubmitForm} className="loginBtn bg-[#7747ff] w-max m-auto px-6 py-2  text-white text-sm font-normal">Login</button>
+                                    <button type="submit" onClick={(event)=>handleSubmitForm(event)} className="loginBtn bg-[#7747ff] w-max m-auto px-6 py-2  text-white text-sm font-normal">Login</button>
                                 </form>
                                 <div className="text-sm text-center mt-[1.6rem]">Don’t you have an account yet? <Link to={'/signup'}><span className="text-sm text-[#7747ff]">Sign up for free! </span> </Link></div>
                             </div>

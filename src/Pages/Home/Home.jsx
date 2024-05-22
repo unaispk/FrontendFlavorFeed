@@ -14,7 +14,6 @@ const Home = () => {
 
   return (
     <>
-    <Navbar />
     <div>
       
       <section className="h-screen bg-Hero bg-cover font-[Poppins] md:bg-top bg-center bg-blend-color bg-[#00000057] ">

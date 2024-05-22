@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import axios from 'axios'
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
+
+
 
 const EditRecipe = () => {
 
@@ -99,9 +101,19 @@ const EditRecipe = () => {
     setInput({ ...inputs, images: file })
   }
 
+  const { recipeId } = useParams();
+
+
+  useEffect(() => {
+    axios.get(`http://localhost:2001/recipe/viewsinglerecipe/${recipeId}`).then((res)=>{
+      console.log("Response on the edit page -- ",res );
+      setInput(res.data.data)
+
+    })
+  },[])
+
   return (
     <>
-      <Navbar />
       <div className="bg-gray-100 p-2 flex items-center justify-center">
         <div className="bg-white p-4 rounded-sm shadow-md w-full md:w-3/4 lg:w-1/2">
           <h1 className="text-3xl font-bold mb-6">Edit a recipe</h1>
@@ -112,6 +124,7 @@ const EditRecipe = () => {
               </label>
               <input
                 type="text" id="recipeName" name="recipename"
+                value={inputs.recipename} // Old data save to the field
                 className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
                 placeholder="E.g., Spaghetti Bolognese" onChange={inputChange} onClick={() => { setFormErrors({ ...formErrors, recipename: '' }) }}
               />

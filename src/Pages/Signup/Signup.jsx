@@ -99,7 +99,6 @@ function Signup() {
         <>
             <div>
                 <section className="h-screen bg-Homewall bg-cover font-[Poppins] md:bg-top bg-center">
-                    <Navbar />
 
                     <div className="flex flex-col justify-center text-center items-center sm:mt-10 h-3/4">
                         
