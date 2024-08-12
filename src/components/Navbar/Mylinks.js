@@ -57,7 +57,7 @@ export const links = [
     ],
   },
   // {
-  //   name: "Add a recipe",
+  //   name: "Add recipe",
   //   link: "/addrecipe",
   //   submenu: false, 
   // }

@@ -136,6 +136,7 @@ const AddRecipe = () => {
                 className="w-full border border-gray-300 rounded-md py-2 px-3 resize-none focus:outline-none focus:border-blue-500"
                 placeholder="Enter ingredients separated by commas" onChange={inputChange} onClick={() => { setFormErrors({ ...formErrors, ingredients: '' }) }}
               ></textarea>
+              <span className='text-sm ml-2 text-red-400'>! Enter ingredients separated by commas</span>
             </div>
 
             <div>

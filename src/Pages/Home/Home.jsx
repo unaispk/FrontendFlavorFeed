@@ -42,13 +42,12 @@ const Home = () => {
         <div className="flex justify-around mx-4 mb-8 mt-4 ">
           <div className="flex flex-wrap ">
           <HomeFeaturedRecipe/>
-        
           </div>
 
         </div>
       </div>
 
-      {/* ---------------------- */}
+      {/* ----------------------  */}
       <div className="bg-[#d4dbff2e]">
         <div className="flex flex-col justify-center items-center h-3/4 p-4 md:p-8">
           <div className="  text-4xl md:text-5xl font-bold text-center font-[Poppins]  ">
@@ -68,36 +67,52 @@ const Home = () => {
         
       </div>
 
-      <section className="h-screen bg-Cook bg-cover font-[Poppins] md:bg-top bg-center bg-blend-color bg-[#0000005c] ">
-        <div className="flex flex-col   h-3/4 p-4 md:p-16 md:pt-20">
+      <section className="h-screen bg-Cook bg-cover font-[Poppins] md:bg-top bg-center bg-blend-color bg-[#0000005c] border-b">
+        
+        {/* <div className="flex flex-col   h-3/4 p-4 md:p-16 md:pt-20">
           <div className="text-white  text-4xl md:text-5xl font-bold text-center font-[Poppins]">
             <h1>Get Daily<span className='text-yellow-400 text-4xl md:text-5xl font-bold text-center font-[Poppins]'>Updates</span></h1>
-          </div>
+          </div> */}
 
-          <div className="grid grid-cols-2 gap-12 md:pt-20">
-            <div className="bg-base-200 p-4 text-white md:text-lg  font-[Poppins]">
-              <p>it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
-                obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
-                discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular
-                during the Renaissance. </p>
+         {/* <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12 md:pt-20 p-4">
+  <div className="bg-base-200 p-4 text-gray-200 text-base md:text-lg font-[Poppins]">
+    <p>Welcome to Flavour Feed! Discover and share delicious recipes by creating an account on our user-friendly platform. Explore a wide variety of recipes, complete with images, ingredients, and detailed descriptions. Simply click on a recipe card to view all the mouth-watering details. Use our convenient search field to find exactly what you're craving in no time. Flavour Feed is designed to be mobile-friendly, ensuring you have easy access to your favorite recipes whether you're at home or on the go. Join our community today and start your culinary journey with Flavour Feed!</p>
+  </div>
 
-                {
-                  role == 'user' || role == 'admin' ? '' :
-                    <div className="text-3xl">
-                      <Button />
-                    </div>
-                }
+  <div className="flex justify-center items-center h-full">
+    {role !== 'user' && role !== 'admin' && (
+      <div className="text-2xl md:text-3xl">
+        <Button />
+      </div>
+    )}
+  </div>
 
-            </div>
-            {/* <div className="bg-base-200 p-4 flex justify-center">
-              <div className='w-80 shadow-xl'>
-                <img src="src/assets/baking.jpg" alt="image" className='w-full h-full object-contain rounded-lg' />
-              </div>
-            </div> */}
+ 
+</div> */}
 
-          </div>
+<div className="flex flex-col h-3/4 p-4 sm:p-8 md:p-12 md:pt-18 lg:pt-24">
+  <div className="text-white text-3xl sm:text-4xl md:text-4xl font-bold text-center font-[Poppins]">
+    <h1>Get Daily <span className="text-yellow-400 text-3xl sm:text-4xl md:text-5xl font-bold">Updates</span></h1>
+  </div>
+
+  <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:justify-center md:grid-cols-2 md:gap-0 md:pt-4  p-4">
+    <div className="bg-base-200 p-4 text-gray-200 text-md  md:justify-center sm:text-base md:text-auto font-[Poppins]">
+      <p>Welcome to Flavour Feed! Discover and share delicious recipes by creating an account on our user-friendly platform. Explore a wide variety of recipes, complete with images, ingredients, and detailed descriptions. Simply click on a recipe card to view all the mouth-watering details. Use our convenient search field to find exactly what you're craving in no time. Flavour Feed is designed to be mobile-friendly, ensuring you have easy access to your favorite recipes whether you're at home or on the go. Join our community today and start your culinary journey with Flavour Feed!</p>
+    </div>
+
+    <div className="flex justify-center items-center h-full">
+      {role !== 'user' && role !== 'admin' && (
+        <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+          <Button />
         </div>
+      )}
+    </div>
+  </div>
+</div>
+
+
+
+        {/* </div> */}
 
       </section >
       

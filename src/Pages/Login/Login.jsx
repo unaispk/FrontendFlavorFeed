@@ -40,44 +40,48 @@ const Login = () => {
         return errors;
       };
 
+    // const handleSubmitForm = async (event) => {
+    //     event.preventDefault();
+    //     console.log(inputs);
+    //     setFormErrors(handleValidate(inputs))
+    //     setIsSubmit(true)
+    //     console.log('key', Object.keys(formErrors).length ,isSubmit );       
+    // }
+
     const handleSubmitForm = async (event) => {
         event.preventDefault();
         console.log(inputs);
-        setFormErrors(handleValidate(inputs))
-        setIsSubmit(true)
-        console.log('key', Object.keys(formErrors).length ,isSubmit );       
-    }
     
-    useEffect(()=> {
- if (Object.keys(formErrors).length == 0 && isSubmit == true) {
-            axios.post('http://localhost:2001/user/login', inputs).then((res) => {
+        const errors = handleValidate(inputs);
+        setFormErrors(errors);
+    
+        if (Object.keys(errors).length === 0) {
+            try {
+                const res = await axios.post('http://localhost:2001/user/login', inputs);
                 console.log("response", res);
-                // toast.success(res.data.message)
-                
-                // alert(res.data.message)
-                toast.success(res.data.message)
-                // localStorage.setItem('userId',res.data.data._id)
-                console.log(res.data.data._id);
-                console.log(res.data.data.email);
-
-                sessionStorage.setItem('userId', res.data.data._id)
-                sessionStorage.setItem('email', res.data.data.email)
-                sessionStorage.setItem('role', res.data.data.role)
-
-                // const userid = localStorage.getItem('userId')
-                // const userName = sessionStorage.getItem('userName')
-                // const userName = sessionStorage.getItem('emailID')
-                setTimeout(()=>{
-                    navigate('/')
-                },3000)
-                
-           }).catch((error) => {
-               // toast.error(error.response.data.message);
-               alert(error.response.data.message)
-           })
+                sessionStorage.setItem('role', res.data.data.role);
+                sessionStorage.setItem('userId', res.data.data._id);
+                sessionStorage.setItem('email', res.data.data.email);
+    
+                toast.success(res.data.message);
+    
+                setTimeout(() => {
+                    navigate('/');
+                }, 3000);
+            } catch (error) {
+                if (!error.response || !error.response.data || !error.response.data.message) {
+                    toast.error('An unexpected error occurred');
+                } else {
+                    toast.error(error.response.data.message);
+                }
+            }
+        } else {
+            console.log('Form validation errors:', errors);
         }
-    },[isSubmit])
-
+    };
+    
+    
+    
     const inputChange = (event) => {
         const name = event.target.name
         const value = event.target.value
@@ -100,11 +104,11 @@ const Login = () => {
                                 <form className="flex flex-col gap-3">
                                     <div className="block ">
                                         <span style={{ color: 'red' }}>{formErrors.email}</span>
-                                        <input type="text" id="email" name='email' placeholder='Email' onChange={inputChange} onClick={() => { setFormErrors({ ...formErrors, email: '' }) }}  className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" />
+                                        <input type="text" id="email" name='email'  placeholder='Email' onChange={inputChange} onClick={() => { setFormErrors({ ...formErrors, email: '' }) }}  className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" />
                                     </div>
                                     <div className="block ">
                                         <span style={{ color: 'red' }}>{formErrors.password}</span>
-                                        <input type="text" id="password" name='password' placeholder='Password' onChange={inputChange} onClick={() => { setFormErrors({ ...formErrors, password: '' }) }}  className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0" />
+                                        <input type="text" id="password" name='password' autoComplete='off' placeholder='Password' onChange={inputChange} onClick={() => { setFormErrors({ ...formErrors, password: '' }) }}  className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0" />
                                     </div>
                                     <div>
                                         <Link to={'/resetpassword'}><span className="text-sm text-[#7747ff]" >Forgot your password? </span></Link>    

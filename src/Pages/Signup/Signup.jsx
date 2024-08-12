@@ -100,9 +100,9 @@ function Signup() {
             <div>
                 <section className="h-screen bg-Homewall bg-cover font-[Poppins] md:bg-top bg-center">
 
-                    <div className="flex flex-col justify-center text-center items-center sm:mt-10 h-3/4">
+                    <div className="flex flex-col justify-center text-center items-center  sm:mt-10 h-3/4">
                         
-                        <div className="signup-container-main">
+                        <div className="signup-container-main mt-8">
                             <div className="signup-container  max-w-md  flex flex-col   p-4  text-black bg-white">
                                 <div className="text-2xl font-bold  mb-2 text-[#7747ff] text-center">Sign Up</div>
 

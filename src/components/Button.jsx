@@ -1,31 +1,32 @@
 import React from "react";
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 
 
 const Button = () => {
   const navigate = useNavigate();
 
-  const role = sessionStorage.getItem('role');
+  let Role = sessionStorage.getItem('role');
   const logout = () => {
     sessionStorage.clear();
-    toast.success("Logout Successfull")
-
+    // toast.success("Logout Successfull")
     setTimeout(()=>{
       navigate('/login');
 
-    },5000)
+    },2000)
+
+    
 
     // navigate('/login');
   }
   
   return (
     <>
-        <Toaster />
+        {/* <Toaster /> */}
 
 
 {
-    (role == 'admin' || role == 'user') ?
+    (Role == 'admin' || Role == 'user') ?
       
     <>
       <button onClick={logout} className="bg-primary text-white  px-6 py-2 rounded-full">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/flavor-feed.png";
 import Button from "../Button";
@@ -18,6 +18,7 @@ const Navbar = () => {
 
   const role = sessionStorage.getItem('role');
 
+ 
   return (
     <>
       {role === "admin" ?
@@ -72,7 +73,7 @@ const Navbar = () => {
 
               <NavLinks />
 
-              {
+              {/* {
                 UserId !== null ?
                 <>
                 
@@ -83,16 +84,15 @@ const Navbar = () => {
                 </>
                 :
                 <li> {()=>{window.location.reload()}} <Link to="/alertpage" className="py-7 px-3 inline-block hover:text-primary">ADD A RECIPE</Link></li>
-              }
+              } */}
 
-              {/* {
+              {
                 UserId !== null ?
                 <li><Link to="/user/:UserID" className="py-7 px-3 inline-block hover:text-primary">Profile</Link></li>
                 :
                 ''
-              } */}
+              }
               
-
             </ul>
             
             <div className="md:block hidden"><Button /></div>
