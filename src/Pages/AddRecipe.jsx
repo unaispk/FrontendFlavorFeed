@@ -76,7 +76,10 @@ const AddRecipe = () => {
 
 
     if (Object.keys(formErrors).length == 0 && toSubmit === true) {
-      axios.post(`http://localhost:2001/recipe/addrecipe/${id}`, formData).then((res) => {
+      axios.post(`https://backendflavorfeed.onrender.com/recipe/addrecipe/${id}`, formData).then((res) => {
+
+      // axios.post(`http://localhost:2001/recipe/addrecipe/${id}`, formData).then((res) => {
+
         //   toast.success(res.data.message)
         alert(res.data.message);
       }).catch((error) => {

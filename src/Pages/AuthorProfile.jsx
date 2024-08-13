@@ -26,7 +26,7 @@ const AuthorProfile = () => {
     
     useEffect(() => {
         try {
-            axios.get(`http://localhost:2001/recipe/view-user-recipes/${UserID}`)
+            axios.get(`https://backendflavorfeed.onrender.com/recipe/view-user-recipes/${UserID}`)
                 .then((res) => {
                     setRecipe(res.data.data)
                     console.log(res.data.data);

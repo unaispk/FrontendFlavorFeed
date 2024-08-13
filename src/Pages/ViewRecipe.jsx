@@ -21,7 +21,7 @@ const ViewRecipe = () => {
 
   useEffect(() => {
     try {
-      axios.get(`http://localhost:2001/recipe/viewsinglerecipe/${recipeId}`)
+      axios.get(`https://backendflavorfeed.onrender.com/recipe/viewsinglerecipe/${recipeId}`)
         .then((res) => {
           console.log("Response from server:", res);
           setRecipeDetails(res.data.data);

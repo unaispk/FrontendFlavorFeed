@@ -12,7 +12,10 @@ function MainRecipeCard() {
     console.log(recipes);   
 
     useEffect(() => {
-        axios.get('http://localhost:2001/recipe').then((res) => {
+
+        // axios.get('http://localhost:2001/recipe').then((res) => {
+        axios.get('https://backendflavorfeed.onrender.com/recipe').then((res) => {
+            console.log(res.data)
             setRecipes(res.data.data)
         })
     }, []) 
@@ -21,7 +24,7 @@ function MainRecipeCard() {
 
     const approveRecipe = (id) => {
         console.log(id);
-        axios.post(`http://localhost:2001/recipe/approve/${id}`).then((res) => {
+        axios.post(`https://backendflavorfeed.onrender.com/recipe/approve/${id}`).then((res) => {
             console.log(res);
             alert('Recipe is added')
         })
@@ -29,7 +32,7 @@ function MainRecipeCard() {
 
     const rejectRecipe = (id) => {
         console.log(id);
-        axios.post(`http://localhost:2001/recipe/reject/${id}`).then((res) => {
+        axios.post(`https://backendflavorfeed.onrender.com/recipe/reject/${id}`).then((res) => {
             console.log(res)
             alert('Recipe is rejected')
         })

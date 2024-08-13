@@ -20,7 +20,7 @@ const EditRecipe = () => {
   const [newImages, setNewImages] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:2001/recipe/viewsinglerecipe/${recipeId}`)
+    axios.get(`https://backendflavorfeed.onrender.com/recipe/viewsinglerecipe/${recipeId}`)
       .then((res) => {
         setRecipeDetails(res.data.data);
         setEditableDetails(res.data.data); 
@@ -44,7 +44,7 @@ const EditRecipe = () => {
       formData.append('images', image);
     });
 
-    axios.put(`http://localhost:2001/recipe/updaterecipe/${recipeId}`, formData, {
+    axios.put(`https://backendflavorfeed.onrender.com/recipe/updaterecipe/${recipeId}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

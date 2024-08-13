@@ -83,7 +83,7 @@ function Signup() {
         setToSubmit(true)
 
         if (Object.keys(formErrors).length == 0 && toSubmit === true) {
-            axios.post('http://localhost:2001/user/registeruser', inputs).then((res) => {
+            axios.post('https://backendflavorfeed.onrender.com/user/registeruser', inputs).then((res) => {
             //   toast.success(res.data.message)
                  alert(res.data.message);
             }).catch((error) => {
