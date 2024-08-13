@@ -57,7 +57,7 @@ const Login = () => {
     
         if (Object.keys(errors).length === 0) {
             try {
-                const res = await axios.post('/https://backendflavorfeed.onrender.com/user/login', inputs);
+                const res = await axios.post('https://backendflavorfeed.onrender.com/user/login', inputs);
                 console.log("response", res);
                 sessionStorage.setItem('role', res.data.data.role);
                 sessionStorage.setItem('userId', res.data.data._id);
