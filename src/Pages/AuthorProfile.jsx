@@ -63,8 +63,8 @@ const AuthorProfile = () => {
                                 <h2 className="card-title text-xl font-semibold mb-2">{recipe.recipename}</h2>
                                 <div className="card-actions flex justify-center">
                                 <button className='bg-red-500 text-white px-4 py-2 rounded-full  hover:bg-red-600'><FontAwesomeIcon icon={faTrashCan} /> </button>
-                                    <button onClick={() => { navigate(`/viewrecipe/${recipe._id}`) }} className="bg-primary text-white px-6 py-2 rounded-full">Get Recipe</button>
-                                   <button onClick={() => { navigate(`/editrecipe/${recipe._id}`) }}  className='bg-amber-500 text-white px-4 py-2 rounded-full  hover:bg-amber-600'><FontAwesomeIcon icon={faEdit} /> </button> 
+                                    <button onClick={() => { navigate(`https://backendflavorfeed.onrender.com/viewrecipe/${recipe._id}`) }} className="bg-primary text-white px-6 py-2 rounded-full">Get Recipe</button>
+                                   <button onClick={() => { navigate(`https://backendflavorfeed.onrender.com/editrecipe/${recipe._id}`) }}  className='bg-amber-500 text-white px-4 py-2 rounded-full  hover:bg-amber-600'><FontAwesomeIcon icon={faEdit} /> </button> 
 
                                 </div>
                             </div>

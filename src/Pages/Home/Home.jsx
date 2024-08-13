@@ -61,7 +61,7 @@ const Home = () => {
           </div>
         </div>
         <div className="text-center mb-4">
-           <Link to={'/main'}><ExploreAll /></Link>
+           <Link to={'https://backendflavorfeed.onrender.com/main'}><ExploreAll /></Link>
         </div>
 
         

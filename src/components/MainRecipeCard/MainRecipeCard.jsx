@@ -52,7 +52,7 @@ function MainRecipeCard() {
                                 <div className="card-body">
                                     <h2 className="card-title">{recipe.recipename}</h2>
                                     <div className="card-actions justify-center">
-                                        <button onClick={() => { navigate(`/viewrecipe/${recipe._id}`) }} className="bg-primary text-white px-6 py-2 rounded-full">Get Recipe</button>
+                                        <button onClick={() => { navigate(`https://backendflavorfeed.onrender.com/viewrecipe/${recipe._id}`) }} className="bg-primary text-white px-6 py-2 rounded-full">Get Recipe</button>
                                     </div>
 
                                     <div className="card-actions justify-center">
@@ -95,9 +95,9 @@ function MainRecipeCard() {
 
                                         {
                                             role === 'user' || role === 'admin' ? (
-                                                <button onClick={() => { navigate(`/viewrecipe/${recipe._id}`) }} className="bg-primary text-white px-6 py-2 rounded-full">Get Recipe</button>
+                                                <button onClick={() => { navigate(`https://backendflavorfeed.onrender.com/viewrecipe/${recipe._id}`) }} className="bg-primary text-white px-6 py-2 rounded-full">Get Recipe</button>
                                             ) : (
-                                                <button onClick={() => { navigate(`/alertpage`) }} className="bg-primary text-white px-6 py-2 rounded-full">Get Recipe</button>
+                                                <button onClick={() => { navigate(`https://backendflavorfeed.onrender.com/alertpage`) }} className="bg-primary text-white px-6 py-2 rounded-full">Get Recipe</button>
                                             )
                                         }
 

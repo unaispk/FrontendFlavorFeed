@@ -128,7 +128,7 @@ function Signup() {
                                     <button type="submit" className="loginBtn bg-[#7747ff] w-max m-auto px-6 py-2  text-white text-sm font-normal" onClick={handleSubmitForm}>Sign up</button>
 
                                 </form>                                                                            
-                                <div className="form-message text-md text-center mt-[1.6rem]">Already have an account ? <Link to={'/login'} ><span className="text-md text-[#7747ff]">Log in</span> </Link></div>
+                                <div className="form-message text-md text-center mt-[1.6rem]">Already have an account ? <Link to={'https://backendflavorfeed.onrender.com/login'} ><span className="text-md text-[#7747ff]">Log in</span> </Link></div>
                             </div>
                         </div>
                     </div>

@@ -43,7 +43,7 @@ const AlertPage = () => {
 
             <Button />
 
-            <button onClick={() => { navigate(`/signup`) }} className="bg-green-500 text-white px-6 py-2 rounded-lg">Sign Up</button>
+            <button onClick={() => { navigate(`https://backendflavorfeed.onrender.com/signup`) }} className="bg-green-500 text-white px-6 py-2 rounded-lg">Sign Up</button>
           </div>
         </div>
       </div>
