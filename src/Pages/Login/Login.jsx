@@ -66,7 +66,7 @@ const Login = () => {
                 toast.success(res.data.message);
     
                 setTimeout(() => {
-                    navigate('https://backendflavorfeed.onrender.com');
+                    navigate('/');
                 }, 3000);
             } catch (error) {
                 if (!error.response || !error.response.data || !error.response.data.message) {
@@ -111,11 +111,11 @@ const Login = () => {
                                         <input type="text" id="password" name='password' autoComplete='off' placeholder='Password' onChange={inputChange} onClick={() => { setFormErrors({ ...formErrors, password: '' }) }}  className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0" />
                                     </div>
                                     <div>
-                                        <Link to={'https://backendflavorfeed.onrender.com/resetpassword'}><span className="text-sm text-[#7747ff]" >Forgot your password? </span></Link>    
+                                        <Link to={'/resetpassword'}><span className="text-sm text-[#7747ff]" >Forgot your password? </span></Link>    
                                     </div>
                                     <button type="submit" onClick={(event)=>handleSubmitForm(event)} className="loginBtn bg-[#7747ff] w-max m-auto px-6 py-2  text-white text-sm font-normal">Login</button>
                                 </form>
-                                <div className="text-sm text-center mt-[1.6rem]">Don’t you have an account yet? <Link to={'https://backendflavorfeed.onrender.com/signup'}><span className="text-sm text-[#7747ff]">Sign up for free! </span> </Link></div>
+                                <div className="text-sm text-center mt-[1.6rem]">Don’t you have an account yet? <Link to={'/signup'}><span className="text-sm text-[#7747ff]">Sign up for free! </span> </Link></div>
                             </div>
                         </div>
 
